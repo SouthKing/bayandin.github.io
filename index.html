@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 
-<html>
+<html id="html">
 <head>
     <meta charset="utf-8">
     <title>Alexander Bayandin</title>
@@ -54,9 +54,11 @@
     </style>
 </head>
 <body>
+
 <main>
     Alexander Bayandin
 </main>
+
 <footer>
     <a title="My tweets" rel="me" target="_blank" href="https://twitter.com/abayandin">Twitter</a>
     &nbsp;&bull;&nbsp;
@@ -66,5 +68,16 @@
     &nbsp;&bull;&nbsp;
     <a title="Email me" rel="me" target="_blank" href="mailto:Alexander%20Bayandin%3Ca.bayandin@gmail.com%3E">Email</a>
 </footer>
+
+<script>
+    (function () {
+        var now = new Date();
+        var time = (now.getTime() - now.setHours(0, 0, 0, 0)) / 1000 / 60;
+        var saturation = 1 - Math.abs(time / 720 - 1);
+
+        document.getElementById("html").style.webkitFilter = "saturate(" + saturation + ")";
+    })()
+</script>
+
 </body>
 </html>
