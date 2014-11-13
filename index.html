@@ -71,13 +71,14 @@
 </footer>
 
 <script>
-    (function () {
+    function updateSaturation() {
         var now = new Date();
-        var time = (now.getTime() - now.setHours(0, 0, 0, 0)) / 1000 / 60;
-        var saturation = 1 - Math.abs(time / 720 - 1);
+        var time = (now.getTime() - now.setHours(0, 0, 0, 0)) / 1000 / 60 / 60 % 1;
+        var saturation = 1 - Math.abs(2 * time - 1);
 
         document.getElementById("html").style.webkitFilter = "saturate(" + saturation + ")";
-    })()
+    }
+    setInterval(updateSaturation, 1000);
 </script>
 
 </body>
